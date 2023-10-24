@@ -1,23 +1,25 @@
 package ru.ivan.domain.scenario;
 
-import ru.ivan.domain.entity.CalculationResult;
 import ru.ivan.domain.usecase.CalculateOperationUseCase;
 import ru.ivan.domain.usecase.GetOperationUseCase;
+import ru.ivan.domain.usecase.SaveCalculationResultUseCase;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class DatabaseAppScenario {
   private final GetOperationUseCase getOperationUseCase;
   private final CalculateOperationUseCase calculateOperationUseCase;
+  private final SaveCalculationResultUseCase saveCalculationResultUseCase;
 
   public DatabaseAppScenario(GetOperationUseCase getOperationUseCase,
-                             CalculateOperationUseCase calculateOperationUseCase) {
+                             CalculateOperationUseCase calculateOperationUseCase,
+                             SaveCalculationResultUseCase saveCalculationResultUseCase) {
     this.getOperationUseCase = getOperationUseCase;
     this.calculateOperationUseCase = calculateOperationUseCase;
+    this.saveCalculationResultUseCase = saveCalculationResultUseCase;
   }
 
   public void invoke() throws SQLException {
-   List<CalculationResult> list = calculateOperationUseCase.invoke(getOperationUseCase.invoke());
+    saveCalculationResultUseCase.invoke(calculateOperationUseCase.invoke(getOperationUseCase.invoke()));
   }
 }
