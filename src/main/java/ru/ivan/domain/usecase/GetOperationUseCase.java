@@ -12,7 +12,7 @@ public class GetOperationUseCase {
   public GetOperationUseCase(OperationRepository operationRepository) {
     this.operationRepository = operationRepository;
   }
-  public List<Operation> invoke() throws SQLException {
+  public List<Operation> invoke(){
     return operationRepository.getAll();
   }
 }

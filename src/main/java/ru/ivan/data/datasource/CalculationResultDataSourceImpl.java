@@ -14,7 +14,7 @@ public class CalculationResultDataSourceImpl implements CalculationResultDataSou
   public CalculationResultDataSourceImpl(Database database) {this.database = database;}
 
   @Override
-  public void saveAll(List<CalculationResult> calculationResults) throws SQLException {
+  public void saveAll(List<CalculationResult> calculationResults)  {
     for (CalculationResult result:calculationResults) {
       String sql = formatSqlQuery(result);
       try{
@@ -22,7 +22,8 @@ public class CalculationResultDataSourceImpl implements CalculationResultDataSou
         rs.close();
       }
       catch (SQLException e){
-        if(!e.getSQLState().equals("02000")){throw e;}
+        if(!e.getSQLState().equals("02000")){
+          throw new RuntimeException(e.getMessage());}
 
       }
     }

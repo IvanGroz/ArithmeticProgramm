@@ -7,6 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface OperationDataSource {
-  List<OperationModel> getAll() throws SQLException;
+  List<OperationModel> getAll() ;
 
 }

@@ -13,7 +13,7 @@ public class SaveCalculationResultUseCase {
     this.calculationResultRepository = calculationResultRepository;
   }
 
-  public void invoke(List<CalculationResult> calculationResults) throws SQLException {
+  public void invoke(List<CalculationResult> calculationResults) {
     calculationResultRepository.saveAll(calculationResults);
   }
 }

@@ -19,7 +19,7 @@ public class OperationRepositoryImpl implements OperationRepository {
   }
 
   @Override
-  public List<Operation> getAll() throws SQLException {
+  public List<Operation> getAll()  {
     return dataSource.getAll().stream().map(converter::convert).collect(Collectors.toList());
   }
 }

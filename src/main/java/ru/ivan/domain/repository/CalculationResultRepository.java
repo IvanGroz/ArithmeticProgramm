@@ -6,5 +6,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface CalculationResultRepository {
-  void saveAll(List<CalculationResult> calculationResults) throws SQLException;
+  void saveAll(List<CalculationResult> calculationResults) ;
 }

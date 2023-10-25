@@ -4,10 +4,13 @@ import ru.ivan.data.converter.OperationConverter;
 import ru.ivan.data.database.Database;
 import ru.ivan.data.datasource.CalculationResultDataSourceImpl;
 import ru.ivan.data.datasource.OperationDataSourceImpl;
+import ru.ivan.data.repository.CalculationResultRepositoryFileImpl;
 import ru.ivan.data.repository.CalculationResultRepositoryImpl;
+import ru.ivan.data.repository.OperationRepositoryFileImpl;
 import ru.ivan.data.repository.OperationRepositoryImpl;
 import ru.ivan.domain.scenario.ConsoleAppScenario;
 import ru.ivan.domain.scenario.DatabaseAppScenario;
+import ru.ivan.domain.scenario.FileAppScenario;
 import ru.ivan.domain.usecase.CalculateOperationUseCase;
 import ru.ivan.domain.usecase.GetOperationUseCase;
 import ru.ivan.domain.usecase.SaveCalculationResultUseCase;
@@ -58,6 +61,7 @@ public class Main {
                   )
           );
 
+
   public static void main(String[] args) {
     String appMode = "";
     try {//считываем режим работы
@@ -84,6 +88,15 @@ public class Main {
           System.out.println("При файловом режиме работы,аргументов программы должно быть 2:" +
                                      " входной файл и файл печати");
         }
+         final FileAppScenario FILE_APP_SCENARIO =
+                new FileAppScenario(
+                        new GetOperationUseCase(
+                                new OperationRepositoryFileImpl(args[0])
+                        ),
+                        new CalculateOperationUseCase(),
+                        new SaveCalculationResultUseCase(new CalculationResultRepositoryFileImpl(args[1]))
+                );
+        FILE_APP_SCENARIO.invoke();
         break;
     }
   }

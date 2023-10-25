@@ -14,7 +14,7 @@ public class CalculationResultRepositoryImpl implements CalculationResultReposit
           CalculationResultDataSource dataSource) {this.dataSource = dataSource;}
 
   @Override
-  public void saveAll(List<CalculationResult> calculationResults) throws SQLException {
+  public void saveAll(List<CalculationResult> calculationResults) {
     dataSource.saveAll(calculationResults);
   }
 }

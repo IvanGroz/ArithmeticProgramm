@@ -6,5 +6,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface OperationRepository {
-  List<Operation> getAll() throws SQLException;
+  List<Operation> getAll() ;
 }

@@ -19,8 +19,13 @@ public class OperationDataSourceImpl implements OperationDataSource {
   }
 
   @Override
-  public List<OperationModel> getAll() throws SQLException {
-    return convertToOperationModel(database.execute(SQL_QUERY_OPERATION));
+  public List<OperationModel> getAll() {
+    try {
+      return convertToOperationModel(database.execute(SQL_QUERY_OPERATION));
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+      throw new RuntimeException(e);
+    }
   }
 
   private List<OperationModel> convertToOperationModel(ResultSet resultSet) throws SQLException {
