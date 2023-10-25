@@ -31,9 +31,9 @@
 1. Необходимо перенести БД из файла `dump_DB` [таким образом](https://info-comp.ru/migrating-postgresql-database-to-another-server)
 2. Внести изменения в `jartest/db_prop.txt`, а именно необходимо указать: 1я строка - логин, 2я - пароль, 3я - местрополоение БД (`url` подключения формата: `'jdbc:postgresql://localhost:5432/db_name'`).
 3. Открыв консоль `cmd` из директории `jarTest` исполнить следующие команды:
-*  `java -jar arithmeticTask.jar -`
-*  `java -jar arithmeticTask.jar input.txt out.txt`
-*  `java -jar arithmeticTask.jar db`
+*  `java -jar arithmeticTask.jar -` - консольный режим работы
+*  `java -jar arithmeticTask.jar input.txt out.txt` - файловый режим
+*  `java -jar arithmeticTask.jar db` - режим работы с БД
 4. Все выходные данные будут появлять в указанном `out.txt` файле или в БД. 
  
  
