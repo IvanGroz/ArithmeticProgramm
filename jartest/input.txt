@@ -1,0 +1,4 @@
+add 1 2 2 3
+mul 3 4 1
+mul_add 2 2 3
+sqrt 9
