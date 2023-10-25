@@ -6,6 +6,7 @@ import ru.ivan.data.datasource.CalculationResultDataSourceImpl;
 import ru.ivan.data.datasource.OperationDataSourceImpl;
 import ru.ivan.data.repository.CalculationResultRepositoryImpl;
 import ru.ivan.data.repository.OperationRepositoryImpl;
+import ru.ivan.domain.scenario.ConsoleAppScenario;
 import ru.ivan.domain.scenario.DatabaseAppScenario;
 import ru.ivan.domain.usecase.CalculateOperationUseCase;
 import ru.ivan.domain.usecase.GetOperationUseCase;
@@ -67,7 +68,7 @@ public class Main {
     switch (appMode) {
       case CONSOLE_MODE:
         final ConsoleMainView CONSOLE_MAIN_VIEW = new ConsoleMainView();
-        new Presenter(CONSOLE_MAIN_VIEW);
+        new Presenter(CONSOLE_MAIN_VIEW, new ConsoleAppScenario(new CalculateOperationUseCase()));
         break;
       case DATABASE_MODE:
         try {
