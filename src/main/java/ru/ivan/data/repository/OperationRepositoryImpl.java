@@ -5,7 +5,6 @@ import ru.ivan.data.datasource.OperationDataSource;
 import ru.ivan.domain.entity.Operation;
 import ru.ivan.domain.repository.OperationRepository;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 

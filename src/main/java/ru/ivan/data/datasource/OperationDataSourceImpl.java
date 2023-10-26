@@ -2,13 +2,10 @@ package ru.ivan.data.datasource;
 
 import ru.ivan.data.database.Database;
 import ru.ivan.data.model.OperationModel;
-import ru.ivan.domain.entity.Operation;
 
-import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class OperationDataSourceImpl implements OperationDataSource {

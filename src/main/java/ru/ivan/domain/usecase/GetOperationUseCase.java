@@ -3,7 +3,6 @@ package ru.ivan.domain.usecase;
 import ru.ivan.domain.entity.Operation;
 import ru.ivan.domain.repository.OperationRepository;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class GetOperationUseCase {

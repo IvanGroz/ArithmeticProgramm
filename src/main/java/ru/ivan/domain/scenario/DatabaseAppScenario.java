@@ -4,8 +4,6 @@ import ru.ivan.domain.usecase.CalculateOperationUseCase;
 import ru.ivan.domain.usecase.GetOperationUseCase;
 import ru.ivan.domain.usecase.SaveCalculationResultUseCase;
 
-import java.sql.SQLException;
-
 public class DatabaseAppScenario {
   private final GetOperationUseCase getOperationUseCase;
   private final CalculateOperationUseCase calculateOperationUseCase;
@@ -19,7 +17,7 @@ public class DatabaseAppScenario {
     this.saveCalculationResultUseCase = saveCalculationResultUseCase;
   }
 
-  public void invoke() throws SQLException {
+  public void invoke() {
     saveCalculationResultUseCase.invoke(calculateOperationUseCase.invoke(getOperationUseCase.invoke()));
   }
 }

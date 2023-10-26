@@ -1,11 +1,8 @@
 package ru.ivan.domain.scenario;
 
-import ru.ivan.domain.entity.CalculationResult;
 import ru.ivan.domain.usecase.CalculateOperationUseCase;
 import ru.ivan.domain.usecase.GetOperationUseCase;
 import ru.ivan.domain.usecase.SaveCalculationResultUseCase;
-
-import java.util.List;
 
 public class FileAppScenario {
   private final GetOperationUseCase getOperationUseCase;

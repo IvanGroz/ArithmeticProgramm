@@ -1,10 +1,10 @@
 package ru.ivan.presentation.view;
 
-import ru.ivan.domain.entity.CalculationResult;
 import ru.ivan.presentation.presenter.ConsoleListener;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class ConsoleMainView implements ConsoleView {
   private final List<ConsoleListener> listeners;
